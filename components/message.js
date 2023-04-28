@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const message = ({ children, avatar, username, description }) => {
 	return (
-		<div className="bg-white p-8 border-l-2 border-b-2 shadow-xl m-3 rounded-lg">
+		<div className="p-8 border border-gray-200 shadow-xl m-3 rounded-lg dark:border dark:border-gray-500">
 			<div className="flex items-center gap-2">
 				<Image
 					width="30"

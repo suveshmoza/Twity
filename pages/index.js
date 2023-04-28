@@ -6,7 +6,6 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 import Link from 'next/link';
 
 export default function Home() {
-	//Create a state with all the posts
 	const [allPosts, setAllPosts] = useState([]);
 
 	const getPosts = async () => {
