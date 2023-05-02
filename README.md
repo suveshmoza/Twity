@@ -17,7 +17,7 @@ Twity is a Twitter-like app built with Next.js, TailwindCSS, and Firebase. It al
 To get started with Twity, simply clone the repository and install the necessary dependencies:
 
 ```bashCopy code
-git clone https://github.com/yourusername/twity.git
+git clone https://github.com/suveshmoza/Twity.git
 cd twity
 npm install
 ```
