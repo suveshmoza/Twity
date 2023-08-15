@@ -15,12 +15,13 @@ import Message from '../components/message';
 import { BsTrash2Fill } from 'react-icons/bs';
 import { AiFillEdit } from 'react-icons/ai';
 import Link from 'next/link';
+import MessageSkeleton from '@/components/messageSkeleton';
 
 const Dashboard = () => {
 	const route = useRouter();
 	const [user, loading] = useAuthState(auth);
 	const [posts, setPosts] = useState([]);
-
+	const [isFetching, setIsFetching] = useState(true);
 	const getData = async () => {
 		if (loading) return;
 		if (!user) return route.push('/auth/login');
@@ -39,12 +40,16 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		getData();
+		setTimeout(() => {
+			setIsFetching(false);
+		}, 800);
 	}, [user, loading]);
 
 	return (
 		<div>
 			<h1>Your Posts</h1>
 			<div>
+				{isFetching && <MessageSkeleton />}
 				{posts.map((post) => {
 					return (
 						<Message {...post} key={post.id}>
